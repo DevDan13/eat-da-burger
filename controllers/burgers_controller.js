@@ -1,9 +1,9 @@
-var express = require("express");
+let express = require("express");
 
-var router = express.Router();
+let router = express.Router();
 
 // Import the model (cat.js) to use its database functions.
-var burger = require("../models/burger.js");
+let burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, "public/index.html"));
@@ -17,22 +17,25 @@ router.get("/burgers", function (req, res) {
 });
 
 router.post("/burgers", function (req, res) {
+    console.log("hittt");
     burger.create(
         req.body.burger_name,
         function (result) {
             console.log("burger", result)
+            //does this need to be fixed?
             // Send back the ID of the new quote
             res.json({ id: result.insertId });
         });
 });
 
+//change burger devour from false to true. use id to grab that id?
 router.put("/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
+    let condition = "id = " + req.params.id;
   
     console.log("condition", condition);
   
     burger.update({
-      devour: req.body.devour
+      devour: req.params.devour
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
@@ -44,7 +47,7 @@ router.put("/burgers/:id", function(req, res) {
   });
 
 router.delete("/burgers/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
+    let condition = "id = " + req.params.id;
 
     burger.delete(condition, function (result) {
         if (result.affectedRows == 0) {
