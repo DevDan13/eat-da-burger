@@ -49,20 +49,24 @@ let orm = {
             cb(result);
         });
     },
-    create: function (table, cols, vals, cb) {
-        console.log("hit");
-        let queryString = "INSERT INTO " + table;
+    create: function (table, vals, cb) {
+        // console.log("hit");
+        // console.log("cols", cols);
+        // console.log("vals", vals);
+        // let queryString = "INSERT INTO " + table;
 
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
+        // queryString += " (";
+        // queryString += cols.toString();
+        // queryString += ") ";
+        // queryString += "VALUES (";
+        // queryString += printQuestionMarks(vals.length);
+        // queryString += ") ";
+
+        let queryString = `INSERT INTO ${table} (burger_name) VALUES (?)`
 
         console.log(queryString);
 
-        connection.query(queryString, vals, function (err, result) {
+        connection.query(queryString, [vals], function (err, result) {
             if (err) {
                 throw err;
             }
@@ -94,6 +98,7 @@ let orm = {
         queryString += " WHERE ";
         queryString += condition;
 
+        console.log(queryString);
         connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
