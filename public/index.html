@@ -2,28 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/burgers_style.css" type="text/css" />
     <title>MVC With burgers!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/assets/js/burgers.js"></script>
   </head>
   <body>
-    <h1>eat da burger!</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" id="top-bar">
+          <img src="\assets\img\giant-party-burger.jpg" alt="burger">
+          <h1>Eat-Da-Burger!</h1>
+        </div>
+      </div>
+    </div>
 
-    <h2>burgers to be devoured!</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center enter_section">
+          <p>Enter a burger you want to DEVOUR &amp; click the "Submit" button.</p>
+          <form class="add-burger">
+            <input type="text" class="form-control" name="burger_name" value="" id="burger_name">
+            <button type="submit" class="btn btn-primary" id="text-enter-button">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
-    <ul id="notSleepyCats"></ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center enter_section">
+          <p>Devour and Delete a burger.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" class="devour-styling" id="to-devour"></div>
+        <div class="col-md-6" class="delete-styling" id="devoured"></div>
+      </div>
+    </div>
+    
+    <!-- <h2>burgers to be devoured!</h2>
+
+    <ul id="to-devour"></ul>
 
     <h2>devoured burgers!</h2>
 
-    <ul id="sleepyCats"></ul>
+    <ul id="devoured"></ul>
 
     <h2>Add a burger</h2>
     <form class="create-form">
       <div class="form-group">
         <label for="ca">burger Name:</label>
         <input type="text" id="ca" name="name" />
-      </div>
+      </div> -->
 
       <!-- <div class="form-group">
         <label for="sleepy">Sleepy?</label><br />
@@ -31,7 +65,7 @@
         <input type="radio" name="sleepy" value="0" /> Awake
       </div> -->
 
-      <button type="submit">Add Burger</button>
+      <!-- <button type="submit">Add Burger</button> -->
     </form>
   </body>
 </html>
