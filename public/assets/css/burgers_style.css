@@ -1,20 +1,32 @@
-li {
+body {
+  background-image: url(/assets/img/Grill-Background.jpg);
+  background-repeat: no-repeat;
+  background-color: #fff27d;
+  background-attachment: fixed;
+  background-size: cover;
+ }
+ 
+/* li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
-  }
+} */
+
+.devour-styling{
+  color: azure;
+}
+.label {
+  font-weight: bold;
+}
   
-  .label {
-    font-weight: bold;
-  }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-  }
+.burger-message{
+  color: azure;
+}
+.submit{
+  margin-top: 10px;
+} 
+
+.form-group {
+  margin-bottom: 5px;
+}
   

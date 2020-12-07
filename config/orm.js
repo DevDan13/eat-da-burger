@@ -75,7 +75,7 @@ let orm = {
         });  
     },
     //change devoured from false to true here?
-    // An example of objColVals would be {name: panther, sleepy: true}
+    // An example of objColVals would be {burger_name: ice burg, devoured: true}
     update: function (table, objColVals, condition, cb) {
         let queryString = "UPDATE " + table;
 

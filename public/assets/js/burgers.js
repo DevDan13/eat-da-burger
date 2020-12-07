@@ -14,24 +14,24 @@ $(function () {
     for (var i = 0; i < len; i++) {
       let new_elem;
       if (eatBurgers[i].devoured) {
-        new_elem = "<li>" + eatBurgers[i].id + ". "
+        new_elem = "<div class= 'devour-styling'>" + eatBurgers[i].id + ". "
           + eatBurgers[i].burger_name + "     " +
-          "   <button class='delete-burger' data-id='" +
+          "   <button class='btn btn-danger delete-burger' data-id='" +
           eatBurgers[i].id +
-          "'>DELETE!</button></li>";
+          "'>DELETE!</button></div>";
         console.log(new_elem);
         devouredElem.append(new_elem);
       } else {
         new_elem =
-          "<li>" +
+          "<div class= 'devour-styling'>" +
           eatBurgers[i].id +
           ". " + eatBurgers[i].burger_name + "      " +
-          "   <button class='devour-burger' data-id='" +
+          "   <button class='btn btn-primary devour-burger' data-id='" +
           eatBurgers[i].id +
           "' data-newsleep='" +
           !eatBurgers[i].devoured +
           "'>";
-        new_elem += "Devour!";
+        new_elem += "Devour!</button></div>";
         console.log(new_elem);
         toDevourElem.append(new_elem);
       }
